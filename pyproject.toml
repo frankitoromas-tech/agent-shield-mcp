@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-shield-mcp"
+version = "1.0.0"
+description = "Enterprise Security Firewall & Granular Sandboxing (Allow/Ask/Deny) for Model Context Protocol (FastMCP) Tools"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Frank Emiliano Vargas Huamán (Frankosyni)", email = "frank5vargashuaman@gmail.com" }
+]
+keywords = [
+    "model-context-protocol",
+    "mcp",
+    "fastmcp",
+    "ai-agents",
+    "security",
+    "sandboxing",
+    "firewall",
+    "tool-calling",
+    "pydantic"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "pydantic>=2.7.0",
+    "fastmcp>=0.1.0",
+    "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.3.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
